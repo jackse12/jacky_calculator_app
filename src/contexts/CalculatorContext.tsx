@@ -16,8 +16,6 @@ const CalculatorProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [outputValue, setOutputValue] = useState("0");
   const [equalValue, setEqualValue] = useState<number | null>(null);
-  const [operator, setOperator] = useState<string | null>(null);
-  const [previousValue, setPreviousValue] = useState<string | null>(null);
 
   const handleButtonCliked = (button: CalculatorButtonType) => {
     if (button.type === "number" || button.type === "operator") {
@@ -55,8 +53,6 @@ const CalculatorProvider: React.FC<{ children: ReactNode }> = ({
   const clearAll = () => {
     setOutputValue("0");
     setEqualValue(null);
-    setOperator(null);
-    setPreviousValue(null);
   };
 
   return (
